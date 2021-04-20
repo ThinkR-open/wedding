@@ -1,0 +1,166 @@
+/* Import fonts */
+@font-face {
+    font-family: 'MrsEavesItalic';
+    src: url('MrsEavesItalic.eot');
+    src: url('MrsEavesItalic.eot?#iefix') format('embedded-opentype'),
+        url('MrsEavesItalic.woff2') format('woff2'),
+        url('MrsEavesItalic.woff') format('woff'),
+        url('MrsEavesItalic.ttf') format('truetype'),
+        url('MrsEavesItalic.svg#MrsEavesItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Old Script';
+    src: url('OldScrip.eot');
+    src: url('OldScrip.eot?#iefix') format('embedded-opentype'),
+        url('OldScrip.woff2') format('woff2'),
+        url('OldScrip.woff') format('woff'),
+        url('OldScrip.ttf') format('truetype'),
+        url('OldScrip.svg#OldScrip') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std 1';
+    src: url('BauerBodoniStd-Roman.eot');
+    src: url('BauerBodoniStd-Roman.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-Roman.woff2') format('woff2'),
+        url('BauerBodoniStd-Roman.woff') format('woff'),
+        url('BauerBodoniStd-Roman.ttf') format('truetype'),
+        url('BauerBodoniStd-Roman.svg#BauerBodoniStd-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Body */
+html,body{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* Navbars */
+.container-fluid,
+.navbar{
+    width: 100%;
+    padding: 0 !important;
+    margin:0 !important;
+    background-color: white; 
+    color: black; 
+    font-family: 'MrsEavesItalic';
+    font-size: 15px;
+    letter-spacing: 3px
+}
+
+.tabbable > .nav > li    > a {
+    background-color: white; 
+    color: black;
+}
+
+.tabbable > .nav > li[class=active]    > a {
+    background-color: rgb(230, 230, 230);
+    color: black;
+}
+
+/* Backgroud image module tab couple */
+.landing-wrapper {}
+
+.landing-wrapper .landing-block{
+    width: 100%;
+    height: 100vh;
+/*    opacity: 0.9;*/
+}
+
+.landing-wrapper .background-content img{
+    display: block;
+    width: 100%;
+}
+
+.landing-wrapper .foreground-content{
+    position: absolute;
+    top: 10%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-wrapper .foreground-content .foreground-text{
+    width: 50%;
+    padding: 4%;
+    color: black;
+    background-color: white;
+    text-align: center;
+}
+
+/* Password textbox hidden tab couple */
+#hidden_tab_preparations_ui_1-password_tab_preparation {
+    font-family: 'Bauer Bodoni Std 1';
+}
+
+#hidden_tab_preparations_ui_1-password_tab_preparation:focus {
+    font-family: 'Bauer Bodoni Std 1';
+    border-color: rgb(116, 87, 80);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+    outline: 0 none;
+}
+
+/* Buttons tab confirmation */
+
+#tab_confirmation_ui_1-save_info_guest {
+    font-family: 'Bauer Bodoni Std 1';
+}
+
+#tab_confirmation_ui_1-save_info_guest:focus {
+    font-family: 'Bauer Bodoni Std 1';
+    border-color: rgb(116, 87, 80);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+    outline: 0 none;
+}
+
+#tab_confirmation_ui_1-add_guest {
+    font-family: 'Bauer Bodoni Std 1';
+}
+
+#tab_confirmation_ui_1-add_guest:focus {
+    font-family: 'Bauer Bodoni Std 1';
+    border-color: rgb(116, 87, 80);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+    outline: 0 none;
+}
+
+#tab_confirmation_ui_1-send_info_guest {
+    background-color: rgb(235, 235, 235);
+    font-family: 'Bauer Bodoni Std 1';
+}
+
+#tab_confirmation_ui_1-send_info_guest:focus {
+    font-family: 'Bauer Bodoni Std 1';
+    background-color: rgb(235, 235, 235);
+    border-color: rgb(116, 87, 80);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+    outline: 0 none;
+}
+
+#tab_confirmation_ui_1-clean_last_info_guest {
+    font-family: 'Bauer Bodoni Std 1';
+}
+
+#tab_confirmation_ui_1-clean_last_info_guest:focus {
+    font-family: 'Bauer Bodoni Std 1';
+    border-color: rgb(116, 87, 80);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+    outline: 0 none;
+}
+
+/* showNotifications */
+
+.shiny-notification {
+    font-family: 'Bauer Bodoni Std 1';
+}

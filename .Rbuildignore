@@ -1,0 +1,12 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^app\.R$
+^rsconnect$
+^data-raw$
+^README\.Rmd$
+^dev$
+^LICENSE\.md$
+^doc$
+^Meta$
+^\.secrets$
+^\.github$
