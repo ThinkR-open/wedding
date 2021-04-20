@@ -1,0 +1,44 @@
+Package: wedding
+Title: Margot's wedding app
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Margot",
+           family = "Brard",
+           role = c("cre", "aut"),
+           email = "margot@thinkr.fr")
+Description: Margot's wedding app. Contains all information about the big
+    day.
+License: GPL (>= 3)
+Depends: 
+    R (>= 2.10)
+Imports: 
+    config,
+    dplyr,
+    DT,
+    geosphere,
+    ggplot2,
+    glue,
+    golem (>= 0.3.0),
+    googledrive,
+    leaflet,
+    lubridate,
+    magrittr,
+    purrr,
+    readr,
+    scales,
+    shiny (>= 1.6.0),
+    shinyjs,
+    shinymanager,
+    shinyWidgets,
+    tibble
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat,
+    tidyverse
+VignetteBuilder: 
+    knitr
+Config/testthat/edition: 3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1

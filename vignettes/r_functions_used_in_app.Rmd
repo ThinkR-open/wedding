@@ -1,0 +1,93 @@
+---
+title: "R functions used in the app"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{r_functions_used_in_app}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(wedding)
+library(tidyverse)
+```
+
+# Information about the wedding day organization
+
+## Construst a count/countdown between two moments
+
+```{r}
+get_count_countdown_moments(start_moment = "2009-10-14 04:00:00",
+                            end_moment = "2021-10-02 15:00:00",
+                            text = "between the moment they met and the wedding")
+```
+
+## Construct a map
+
+```{r}
+data_markers <- tibble(
+  longitude = c(2.1203232115689707, 2.119756986412269, 2.120561059665001),
+  latitude = c(48.80504860237253, 48.78022930537074, 48.85858486573977),
+  name = c(
+    "<b>Palace of Versailles</b><br/>Super great place to get married", 
+    "<b>A random place to stay</b>", 
+    "<b>A random place to stay</b>")
+)
+
+get_map_wedding(
+  data_markers = data_markers,
+  icon_markers = "home"
+)
+```
+
+```{r}
+data_markers <- tibble(
+  longitude = c(2.1203232115689707, 2.119756986412269, 2.120561059665001),
+  latitude = c(48.80504860237253, 48.78022930537074, 48.85858486573977),
+  name = c(
+    "<b>Palace of Versailles</b><br/>Super great place to get married", 
+    "<b>A random place to stay</b>", 
+    "<b>A random place to stay</b>")
+)
+
+get_map_wedding(
+  data_markers = data_markers,
+  icon_markers = "star",
+  zoom = 10
+)
+```
+
+# Information about the wedding preparation
+
+## Rename columns of table of expenses
+
+```{r}
+data(data_expenses_example)
+data_expenses_example %>% 
+  rename_expenses_to_fr()
+```
+
+## Get the total expenses
+
+```{r}
+data(data_expenses_example)
+data_expenses_example %>% 
+  get_total_expenses()
+```
+
+## Plot expenses by paymaster
+
+```{r}
+data(data_expenses_example)
+data_expenses_example %>% 
+  plot_expenses_by_paymaster()
+```
+
+

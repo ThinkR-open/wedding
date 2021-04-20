@@ -1,0 +1,96 @@
+/* Import fonts */
+
+@font-face {
+    font-family: 'MrsEavesItalic';
+    src: url('MrsEavesItalic.eot');
+    src: url('MrsEavesItalic.eot?#iefix') format('embedded-opentype'),
+        url('MrsEavesItalic.woff2') format('woff2'),
+        url('MrsEavesItalic.woff') format('woff'),
+        url('MrsEavesItalic.ttf') format('truetype'),
+        url('MrsEavesItalic.svg#MrsEavesItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Old Script';
+    src: url('OldScrip.eot');
+    src: url('OldScrip.eot?#iefix') format('embedded-opentype'),
+        url('OldScrip.woff2') format('woff2'),
+        url('OldScrip.woff') format('woff'),
+        url('OldScrip.ttf') format('truetype'),
+        url('OldScrip.svg#OldScrip') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bauer Bodoni Std 1';
+    src: url('BauerBodoniStd-Roman.eot');
+    src: url('BauerBodoniStd-Roman.eot?#iefix') format('embedded-opentype'),
+        url('BauerBodoniStd-Roman.woff2') format('woff2'),
+        url('BauerBodoniStd-Roman.woff') format('woff'),
+        url('BauerBodoniStd-Roman.ttf') format('truetype'),
+        url('BauerBodoniStd-Roman.svg#BauerBodoniStd-Roman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Logging rectangle */
+.panel-primary {
+    border-color: transparent;
+}
+
+/* Title */
+#auth-shinymanager-auth-head {
+  font-family: 'MrsEavesItalic';
+  font-size: 40px;
+}
+
+/* Identifiant */
+#auth-user_id-label {
+  font-family: 'Bauer Bodoni Std 1';
+}
+
+#auth-user_id {   
+  font-family: 'Bauer Bodoni Std 1'
+}
+
+#auth-user_id:focus {   
+  font-family: 'Bauer Bodoni Std 1';
+  border-color: rgb(116, 87, 80);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+  outline: 0 none;
+}
+
+/* Password */
+#auth-user_pwd-label {
+  font-family: 'Bauer Bodoni Std 1'; 
+}
+
+#auth-user_pwd:focus {
+  font-family: 'Bauer Bodoni Std 1';
+  border-color: rgb(116, 87, 80);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgb(116, 87, 80);
+  outline: 0 none;
+}
+
+/* Logging button */
+#auth-go_auth{
+    font-family: 'Bauer Bodoni Std 1'; 
+    font-size: 15px;
+    color: white; 
+    background-color: rgb(116, 87, 80);
+    border-color: rgb(116, 87, 80);
+}
+
+#auth-go_auth:focus {
+  font-family: 'Bauer Bodoni Std 1'; 
+  outline: none;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+}

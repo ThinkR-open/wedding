@@ -1,0 +1,15 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+inst/doc
+.DS_Store
+inst/extdata/
+inst/extdata/dta_depenses.csv
+inst/extdata/dta_invites.csv
+inst/extdata/dta_plan_table.csv
+doc
+Meta
+.Renviron
+.secrets
+rsconnect/
