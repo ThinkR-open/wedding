@@ -43,9 +43,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("C\'est qui ? La soeur de la mari\u00e9e, le bras gauche de l\'organisation de ce mariage. C\'est aussi la marraine d\'Ang\u00e8le.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ? Elle a une carte de fid\u00e9lit\u00e9 dans chaque p\u00e2tisserie de Paris.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-            tags$br(style = "line-height: 10px"),
-            tags$p("06.34.36.79.03", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ? Elle a une carte de fid\u00e9lit\u00e9 dans chaque p\u00e2tisserie de Paris.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
             ),
           
           column(
@@ -56,9 +54,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("C\'est qui ? La plus vieille copine de la mari\u00e9e, celle avec laquelle elle a fait les 400 coups. C\'est aussi la marraine d\'Isaure.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ? Sa jambe se casse facilement. Elle parle le Nonii Stutaig.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-            tags$br(style = "line-height: 10px"),
-            tags$p("06.18.14.29.19", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ? Sa jambe se casse facilement. Elle parle le Nonii Stutaig.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           ),
           
           column(
@@ -69,9 +65,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("C\'est qui ? L\'alcolite de l\'\u00e9cole d\'ing\u00e9, celle avec laquelle la mari\u00e9e est partie en Tha\u00eflande remuer les bo\u00eetes de Bangkok.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ? Elle fait des tutos Youtube beaut\u00e9. C\'est une super baby-sitter.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-            tags$br(style = "line-height: 10px"),
-            tags$p("07.81.20.05.51", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ? Elle fait des tutos Youtube beaut\u00e9. C\'est une super baby-sitter.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           )
           
         )
@@ -101,9 +95,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("C\'est qui ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-            tags$br(style = "line-height: 10px"),
-            tags$p("06.42.48.76.76", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           ),
           
           column(
@@ -114,9 +106,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("C\'est qui ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-            tags$br(style = "line-height: 10px"),
-            tags$p("06.31.71.76.91", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           ),
           
           column(
@@ -127,9 +117,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("C\'est qui ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
-            tags$br(style = "line-height: 10px"),
-            tags$p("06.67.42.44.62", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           )
           
         )
