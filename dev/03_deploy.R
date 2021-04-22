@@ -15,6 +15,7 @@
 
 ## Run checks ----
 ## Check the package before sending to prod
+attachment::att_amend_desc()
 devtools::check()
 
 # Deploy
@@ -30,9 +31,8 @@ rsconnect::connectApiUser(
 )
 
 rsconnect::deployApp(
-  #appId = "418",
-  appName = "wedding",
-  appTitle = "Mariage Margot & David (démo)",
+  appName = Sys.getenv("APP_NAME"),
+  appTitle = Sys.getenv("APP_TITLE"),
   account = account_name,                    # your Connect username
   server = account_server                    # the Connect server, see rsconnect::accounts()
 )

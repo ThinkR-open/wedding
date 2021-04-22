@@ -8,6 +8,8 @@
 [![R-CMD-check](https://github.com/ThinkR-open/wedding/workflows/R-CMD-check/badge.svg)](https://github.com/ThinkR-open/wedding/actions)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![Codecov test
+coverage](https://codecov.io/gh/ThinkR-open/wedding/branch/dev/graph/badge.svg)](https://codecov.io/gh/ThinkR-open/wedding?branch=dev)
 <!-- badges: end -->
 
 {wedding} helps you to prepare and manage your wedding 👰👰 - 👰🤵 - 🤵🤵
@@ -25,15 +27,6 @@ Login to access the app: *welcome* <br /> Password to access the app:
 *onlyforbride*
 
 <img src="man/figures/home-page.png" width="100%" />
-
-## Highlights 
-
-- Secure access via a login and password authentication system 
-- Information about the wedding day (schedule, accomodation, etc.)
-- RSVP feature where guests can specify their presence at the different times of the wedding, their choice for the diner menu and their diet
-- Dashboard _- only accessible with login and password -_ where bride/grooms can manage the preparations for their wedding (guests, expenses, table plan)
-- Data stored in Google sheets
-- Design in line with the wedding announcement (colors, fonts, etc.) 
 
 ## Data
 
