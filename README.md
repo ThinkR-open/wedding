@@ -8,8 +8,6 @@
 [![R-CMD-check](https://github.com/ThinkR-open/wedding/workflows/R-CMD-check/badge.svg)](https://github.com/ThinkR-open/wedding/actions)
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![Codecov test
-coverage](https://codecov.io/gh/ThinkR-open/wedding/branch/dev/graph/badge.svg)](https://codecov.io/gh/ThinkR-open/wedding?branch=dev)
 <!-- badges: end -->
 
 {wedding} helps you to prepare and manage your wedding 👰👰 - 👰🤵 - 🤵🤵
