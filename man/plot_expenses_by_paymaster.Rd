@@ -8,7 +8,8 @@ plot_expenses_by_paymaster(
   .data,
   prefix_money = "$",
   suffix_money = "",
-  big_mark_money = ","
+  big_mark_money = ",",
+  font_family = "Times"
 )
 }
 \arguments{
@@ -19,6 +20,8 @@ plot_expenses_by_paymaster(
 \item{suffix_money}{Character.}
 
 \item{big_mark_money}{Character.}
+
+\item{font_family}{Character.}
 }
 \value{
 Plot.

@@ -135,7 +135,8 @@ mod_hidden_tab_preparations_expenses_server <- function(id, r_global = r_global)
         plot_expenses_by_paymaster(
           suffix_money = " euros",
           prefix_money = "",
-          big_mark_money = " "
+          big_mark_money = " ",
+          font_family = "MrsEavesItalic"
         )
       
     })

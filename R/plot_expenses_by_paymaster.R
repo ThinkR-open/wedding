@@ -4,6 +4,7 @@
 #' @param prefix_money Character.
 #' @param suffix_money Character.
 #' @param big_mark_money Character.
+#' @param font_family Character.
 #'
 #' @return Plot.
 #' @export
@@ -16,7 +17,7 @@
 #' data(data_expenses_example)
 #' data_expenses_example %>% 
 #'   plot_expenses_by_paymaster()
-plot_expenses_by_paymaster <- function(.data, prefix_money = "$", suffix_money = "", big_mark_money = ",") {
+plot_expenses_by_paymaster <- function(.data, prefix_money = "$", suffix_money = "", big_mark_money = ",", font_family = "Times") {
   
   plot_expenses <- .data %>% 
     filter(paid_pending == "Paid") %>%
@@ -32,12 +33,12 @@ plot_expenses_by_paymaster <- function(.data, prefix_money = "$", suffix_money =
       x = "",
       y = ""
     ) +
-    geom_text(aes(label = label), vjust = -0.5, family = "Times", size = 6) +
+    geom_text(aes(label = label), vjust = -0.5, family = font_family, size = 6) +
     scale_y_continuous(labels = dollar_format(suffix = suffix_money, prefix = prefix_money, big.mark = big_mark_money)) +
     theme_minimal() +
-    theme(title = element_text(family = "Times"),
-          text = element_text(family = "Times"),
-          axis.text.x = element_text(family = "Times", size = 20))
+    theme(title = element_text(family = font_family),
+          text = element_text(family = font_family),
+          axis.text.x = element_text(family = font_family, size = 20))
 
   return(plot_expenses)
   
