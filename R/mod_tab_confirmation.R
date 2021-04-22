@@ -149,6 +149,7 @@ mod_tab_confirmation_server <- function(id, r_global){
     
     ns <- session$ns
     
+    # Local reactive values - stay in the module
     r_local <- reactiveValues()
     
     r_local$info <- tibble(name = character(),
@@ -202,7 +203,7 @@ mod_tab_confirmation_server <- function(id, r_global){
 
           selectInput(
             inputId = ns("kids_menu"),
-            label = "Menu pour le d\u00eener",
+            label = "Choix pour les repas (cocktail, d\u00eener, retour)",
             choices = c("Menu enfant", "Pas de repas \u00e0 pr\u00e9voir pour mon bibou"),
             selected = "Menu enfant"
           )
@@ -292,25 +293,24 @@ mod_tab_confirmation_server <- function(id, r_global){
     # Save info
     observeEvent(input$send_info_guest, {
       
-      # Verify if info about guest is already in the database
-      
-      list_guests_already_answer <- r_global$data_guests %>% 
+      # Verify if info about guests is already in the database
+      vec_guests_already_answer <- r_global$data_guests %>% 
         filter(!is.na(here_cocktail) & !is.na(here_diner) & !is.na(here_sunday)) %>% 
         pull(name)
       
-      list_guests_to_send <- r_local$info %>% 
+      vec_guests_to_send <- r_local$info %>% 
         pull(name)
       
-      if (any(list_guests_to_send %in% list_guests_already_answer)) {
+      if (any(vec_guests_to_send %in% vec_guests_already_answer)) {
         
         showNotification(ui = "Les informations de certains invit\u00e9s avaient d\u00e9j\u00e0 \u00e9t\u00e9 envoy\u00e9es aux mari\u00e9s. Elles ont \u00e9t\u00e9 remplac\u00e9es par celles que vous venez de renseigner.",
                          type = "default")
         
       }
       
-      # Verify if there are doubles
+      # Verify if there are doubles - if yes, delete them
       
-      if (any(duplicated(list_guests_to_send))) {
+      if (any(duplicated(vec_guests_to_send))) {
         
         showNotification(ui = "Vous avez renseign\u00e9 des doublons d\'informations pour la m\u00eame personne. Seules les derni\u00e8res seront conserv\u00e9es.",
                          type = "default")
@@ -322,26 +322,12 @@ mod_tab_confirmation_server <- function(id, r_global){
       }
       
       # Construct the new database
+      r_global$data_guests <- add_info_guests_in_database(info_to_add = r_local$info,
+                                                          data_guests = r_global$data_guests)
       
-      add_info_guest_to_data_guests <- function(name_guest) {
-        
-        data_guests_just_guest <- r_global$data_guests %>% 
-          filter(name == name_guest) %>% 
-          select(name, type, table, announcement) %>% 
-          left_join(r_local$info %>% 
-                      filter(name == name_guest),
-                    by = "name") 
-        
-        new_data_guests <- r_global$data_guests %>% 
-          filter(name != name_guest) %>% 
-          bind_rows(data_guests_just_guest) %>% 
-          arrange(table)
-        
-        return(new_data_guests)
-      }
-      
-      r_global$data_guests <- unique(list_guests_to_send) %>% 
-        map_dfr(~ add_info_guest_to_data_guests(.x))
+      # Show notification
+      showNotification(ui = "Vos informations ont bien \u00e9t\u00e9 envoy\u00e9es aux mari\u00e9s.",
+                       type = "default")
       
       # Upload the new database
       temp_dir <- tempdir()

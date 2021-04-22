@@ -10,3 +10,4 @@
 ^Meta$
 ^\.secrets$
 ^\.github$
+^codecov\.yml$

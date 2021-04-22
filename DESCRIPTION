@@ -12,30 +12,30 @@ License: GPL (>= 3)
 Depends: 
     R (>= 2.10)
 Imports: 
-    config,
-    dplyr,
-    DT,
-    geosphere,
-    ggplot2,
-    glue,
+    config (>= 0.3.1),
+    dplyr (>= 1.0.5),
+    DT (>= 0.18),
+    geosphere (>= 1.5.10),
+    ggplot2 (>= 3.3.3),
+    glue (>= 1.4.2),
     golem (>= 0.3.0),
-    googledrive,
-    leaflet,
-    lubridate,
-    magrittr,
-    purrr,
-    readr,
-    scales,
+    googledrive (>= 1.0.1),
+    leaflet (>= 2.0.4.1),
+    lubridate (>= 1.7.10),
+    magrittr (>= 2.0.1),
+    purrr (>= 0.3.4),
+    readr (>= 1.4.0),
+    scales (>= 1.1.1),
     shiny (>= 1.6.0),
-    shinyjs,
-    shinymanager,
-    shinyWidgets,
-    tibble
+    shinyjs (>= 2.0.0),
+    shinymanager (>= 1.0.300),
+    shinyWidgets (>= 0.6.0),
+    tibble (>= 3.1.1)
 Suggests: 
-    knitr,
-    rmarkdown,
-    testthat,
-    tidyverse
+    knitr (>= 1.32),
+    rmarkdown (>= 2.7),
+    testthat (>= 3.0.2),
+    tidyverse (>= 1.3.1)
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3

@@ -13,21 +13,24 @@
 
 
 ## CSS files ----
-golem::add_css_file("custom_app_style")             # style of the global app
-golem::add_css_file("custom_logging_style")         # style of the logging page
+golem::add_css_file("custom_app_style")                       # style of the global app
+golem::add_css_file("custom_logging_style")                   # style of the logging page
 # fonts are stored in www/
 
 ## Add modules ----
 ## Create a module infrastructure in R/
-golem::add_module(name = "tab_couple")              # home tab with counts of days since the meeting and days until wedding day
-golem::add_module(name = "tab_confirmation")        # tab in which the guests come to confirm their coming to the wedding
-golem::add_module(name = "tab_schedule")            # tab with the program of the day
-golem::add_module(name = "tab_place")               # tab with a description of the wedding place
-golem::add_module(name = "tab_accommodation")       # tab with a presentation of the nearby accommodations
-golem::add_module(name = "tab_witnesses")           # tab with information about the witnesses
-golem::add_module(name = "tab_covid")               # tab with information on health restrictions related to covid
-golem::add_module(name = "hidden_tab_preparations") # tab accessible to the bride and groom only to manage the wedding preparations (budget, etc.)
-
+golem::add_module(name = "tab_couple")                        # home tab with counts of days since the meeting and days until wedding day
+golem::add_module(name = "tab_confirmation")                  # tab in which the guests come to confirm their coming to the wedding
+golem::add_module(name = "tab_schedule")                      # tab with the program of the day
+golem::add_module(name = "tab_place")                         # tab with a description of the wedding place
+golem::add_module(name = "tab_accommodation")                 # tab with a presentation of the nearby accommodations
+golem::add_module(name = "tab_witnesses")                     # tab with information about the witnesses
+golem::add_module(name = "tab_covid")                         # tab with information on health restrictions related to covid
+golem::add_module(name = "hidden_tab_preparations")           # tab accessible to the bride and groom only to manage the wedding preparations (budget, etc.)
+golem::add_module(name = "hidden_tab_preparations_expenses")  # subtab with budget
+golem::add_module(name = "hidden_tab_preparations_guests")    # subtab with guests answers to RSVP
+golem::add_module(name = "hidden_tab_preparations_menus")     # subtab with guests answers to RSVP
+golem::add_module(name = "hidden_tab_preparations_tables")    # subtab with guests answers to RSVP
 
 ## Vignette ----
 usethis::use_vignette("r_functions_used_in_app")    # vignette with all functions used in the app
@@ -44,6 +47,8 @@ usethis::use_r("get_map_wedding")
 usethis::use_r("rename_expenses_to_fr")
 usethis::use_r("get_total_expenses")
 usethis::use_r("plot_expenses_by_paymaster")
+usethis::use_r("add_info_guests_in_database")
+usethis::use_r("count_confirmations")
 ## Add zzz.R with global variables
 usethis::use_r("zzz")
 ## Add doc data
@@ -57,6 +62,8 @@ usethis::use_test("get_map_wedding_place")
 usethis::use_test("rename_expenses_to_fr")
 usethis::use_test("get_total_expenses")
 usethis::use_test("plot_expenses_by_paymaster")
+usethis::use_test("add_info_guests_in_database")
+usethis::use_test("count_confirmations")
 
 
 ## Ignore files ----
@@ -83,6 +90,12 @@ googledrive::drive_auth(cache = ".secrets",
 usethis::use_github_action_check_standard() 
 # Add action for PR
 usethis::use_github_action_pr_commands()
+
+
+## Code Coverage----
+# usethis::use_coverage(type = "codecov")     # Set the code coverage service ("codecov" or "coveralls")
+# covrpage::covrpage()        # Create a summary readme for the testthat subdirectory
+
 
 # You're now set! ----
 # go to dev/03_deploy.R
