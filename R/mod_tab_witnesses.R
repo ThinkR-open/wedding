@@ -65,7 +65,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("C\'est qui ? L\'alcolite de l\'\u00e9cole d\'ing\u00e9, celle avec laquelle la mari\u00e9e est partie en Tha\u00eflande remuer les bo\u00eetes de Bangkok.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ? Elle fait des tutos Youtube beaut\u00e9. C\'est une super baby-sitter.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ? Elle a des soucis avec le fromage. Elle chante le jingle de Showroomprive.com comme une d\u00e9esse.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           )
           
         )
@@ -91,11 +91,11 @@ mod_tab_witnesses_ui <- function(id){
             width = 4,
             tags$p("Ana\u00efs", style = "font-family: \'MrsEavesItalic\'; font-size: 25px; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("- -", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+            tags$p("- Tati ponette -", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("C\'est qui ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+            tags$p("C\'est qui ? Le work couple du mari\u00e9. Ils se sont alliés pour faire trembler les murs et les délégués syndicaux du 3-5.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ? Elle est facile \u00e0 convaincre quand il s\'agit de faire un tour \u00e0 l\'indien du coin.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           ),
           
           column(
@@ -104,20 +104,20 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("- Yoyo -", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("C\'est qui ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+            tags$p("C\'est qui ? Le coach brico-running du mari\u00e9. Il a su se rendre indispensable et est devenu rapidement bien plus qu\'un simple coach.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ? Il imite le v\u00e9n\u00e9r\u00e9 Denis Brogniart et Tuche Daddy mieux que personne.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           ),
           
           column(
             width = 4,
             tags$p("Antoine", style = "font-family: \'MrsEavesItalic\'; font-size: 25px; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("- -", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+            tags$p("- Anttttoiiiiiiinnnnnnne -", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("C\'est qui ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+            tags$p("C\'est qui ? Le jumeau mal\u00e9fique du mari\u00e9. Celui avec qui il est parti partager un van quelques mois en Australie.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("Sa particularit\u00e9 ?", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
+            tags$p("Sa particularit\u00e9 ? Il cache de la nourriture en cas de disette. M\u00e9fiez-vous pour votre moquette, il a tendance \u00e0 uriner dessus.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           )
           
         )
