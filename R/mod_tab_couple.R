@@ -20,7 +20,7 @@ mod_tab_couple_ui <- function(id){
              # Image fond d'écran
              tags$div(class = "landing-block background-content",
                       
-                      img(src = "www/wedding-background.jpg")
+                      img(src = glue::glue("www/", Sys.getenv("IMG_BACKGROUND")))
                       
              ),
              
@@ -42,7 +42,7 @@ mod_tab_couple_ui <- function(id){
                style = "font-family: 'Bauer Bodoni Std 1'; 
                         font-size:20px; 
                         letter-spacing:5px; 
-                        color: black;
+                        color: white;
                         text-align: center" 
                ),
              
@@ -53,7 +53,7 @@ mod_tab_couple_ui <- function(id){
                style = "font-family: 'Bauer Bodoni Std 1'; 
                         font-size:20px; 
                         letter-spacing:5px; 
-                        color: black;
+                        color: white;
                         text-align: center" 
              ),     
     )

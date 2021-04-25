@@ -17,7 +17,7 @@ run_app <- function(
       ui = shinymanager::secure_app(
         ui = app_ui, 
         head_auth = golem_add_external_resources(),
-        background  = "url(\'../www/wedding-background.jpg\')  no-repeat center fixed;"
+        background  = glue::glue("url(\'../www/", Sys.getenv("IMG_BACKGROUND"), "\') no-repeat center top fixed;")
         ),
       server = app_server,
       onStart = onStart,
