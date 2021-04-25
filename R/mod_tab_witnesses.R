@@ -93,7 +93,7 @@ mod_tab_witnesses_ui <- function(id){
             tags$br(style = "line-height: 10px"),
             tags$p("- Tati ponette -", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
-            tags$p("C\'est qui ? Le work couple du mari\u00e9. Ils se sont alliés pour faire trembler les murs et les délégués syndicaux du 3-5.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
+            tags$p("C\'est qui ? Le work couple du mari\u00e9. Ils se sont alli\u00e9s pour faire trembler les murs et les d\u00e9l\u00e9gu\u00e9s syndicaux du 3-5.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center"),
             tags$br(style = "line-height: 10px"),
             tags$p("Sa particularit\u00e9 ? Elle est facile \u00e0 convaincre quand il s\'agit de faire un tour \u00e0 l\'indien du coin.", style = "font-family: \'MrsEavesItalic\'; letter-spacing:3px; text-align: center")
           ),
