@@ -24,12 +24,10 @@ rename_expenses_to_fr <- function(.data) {
       paid_pending == "Pending" ~ "En attente",
       TRUE ~ NA_character_
     )) %>% 
-    rename("Poste de d\u00e9pense" = object,
-           "R\u00e9el ou pr\u00e9visionnel" = real_projected,
-           "Pay\u00e9 ou en attente" = paid_pending,
-           "Description" = description,
-           "Destinataire" = society,
-           "Payeur" = paymaster,
-           "Montant" = amount)
+    rename(
+      stats::setNames(c("object", "real_projected", "paid_pending", "description", "society", "paymaster", "amount"), 
+                      c("Poste de d\u00e9pense", "R\u00e9el ou pr\u00e9visionnel", "Pay\u00e9 ou en attente", "Description", "Destinataire", "Payeur", "Montant") 
+                      )
+    )
     
 } 

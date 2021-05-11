@@ -106,11 +106,11 @@ mod_hidden_tab_preparations_guests_server <- function(id, r_global){
       
       r_global$data_guests %>% 
         select(name, type, here_cocktail, here_diner, here_sunday) %>% 
-        rename("Nom" = name, 
-               "Cat\u00e9gorie" = type,
-               "Pr\u00e9sence vin d\'honneur" = here_cocktail,
-               "Pr\u00e9sence d\u00eener" = here_diner, 
-               "Pr\u00e9sence retour" = here_sunday)
+        rename(
+          stats::setNames(c("name", "type", "here_cocktail", "here_diner", "here_sunday"), 
+                          c("Nom", "Cat\u00e9gorie", "Pr\u00e9sence vin d\'honneur", "Pr\u00e9sence d\u00eener", "Pr\u00e9sence retour") 
+          )
+        )
       
     })
  
