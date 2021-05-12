@@ -49,6 +49,8 @@ usethis::use_r("get_total_expenses")
 usethis::use_r("plot_expenses_by_paymaster")
 usethis::use_r("add_info_guests_in_database")
 usethis::use_r("count_confirmations")
+usethis::use_r("plot_one_seating_plan")
+usethis::use_r("plot_all_seating_plans")
 ## Add zzz.R with global variables
 usethis::use_r("zzz")
 ## Add doc data

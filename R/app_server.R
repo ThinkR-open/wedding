@@ -3,7 +3,7 @@
 #' @param input,output,session Internal parameters for {shiny}. 
 #'     DO NOT REMOVE.
 #' @import shiny
-#' @importFrom readr read_csv cols col_character
+#' @importFrom readr read_csv cols col_character col_integer
 #' 
 #' @noRd
 app_server <- function( input, output, session ) {
@@ -41,7 +41,8 @@ app_server <- function( input, output, session ) {
   googledrive::drive_download("data_guests", path = glue::glue(temp_dir, "/data_guests.csv"), overwrite = TRUE)
   data_guests <- read_csv(glue::glue(temp_dir, "/data_guests.csv"), 
                           locale = locale(decimal_mark = ","),
-                          col_types = cols(.default = col_character()))
+                          col_types = cols(table = col_integer(),
+                                           .default = col_character()))
   r_global$data_guests <- data_guests
   
   # Your application server logic 

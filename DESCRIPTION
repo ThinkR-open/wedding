@@ -23,6 +23,7 @@ Imports:
     leaflet (>= 2.0.4.1),
     lubridate (>= 1.7.10),
     magrittr (>= 2.0.1),
+    patchwork,
     purrr (>= 0.3.4),
     readr (>= 1.4.0),
     scales (>= 1.1.1),

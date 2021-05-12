@@ -36,12 +36,23 @@ Password to access the tab dedicated to brides/grooms: _onlyforbride_
 knitr::include_graphics("man/figures/home-page.png")
 ```
 
+## Meaning of the tabs
+
+- *Accueil*: Home
+- *Confirmer ma venue*: Confirm my presence
+- *Programme de la journée*: Program of the day
+- *Lieu du mariage*: Location of the wedding
+- *Hébergements*: Accommodations
+- *Témoins*: Witnesses
+- *Covid*: Covid rules
+- *Espace des mariés*: Groom's area (expenses, guests, menu, seating plan)
+
 ## Data
 
 The application is based on two datasets stored on Google Drive: 
 
-- _data_guests_: contains information about your guests (name, attendance at the vin d'honneur, attendance at the dinner, attendance at the return on Sunday lunch, special diet, etc.)
-- _data_expenses_: contains information about the wedding expenses (venue, caterer, groom's outfit, wedding rings, etc.)
+- **data_guests**: contains information about your guests (name, attendance at the vin d'honneur, attendance at the dinner, attendance at the return on Sunday lunch, special diet, etc.)
+- **data_expenses**: contains information about the wedding expenses (venue, caterer, groom's outfit, wedding rings, etc.)
 
 ```{r echo=FALSE, out.width='70%', fig.align='center'}
 knitr::include_graphics("man/figures/data-examples.png")
