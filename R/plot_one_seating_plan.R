@@ -1,4 +1,4 @@
-#' Plot the seating plan for a givzn table
+#' Plot the seating plan for a given table
 #'
 #' @param .data Tibble.
 #' @param id_table Integer.
@@ -6,8 +6,7 @@
 #' @param font_family_guests Character.
 #' 
 #' @importFrom dplyr filter mutate row_number
-#' @importFrom ggplot2 ggplot geom_text aes coord_polar labs theme element_blank element_text
-#' @importFrom ggpattern geom_rect_pattern
+#' @importFrom ggplot2 ggplot geom_text aes coord_polar labs theme element_blank element_text geom_rect
 #'
 #' @return A ggplot2 object.
 #' @export
@@ -32,16 +31,27 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
   
   if (number_of_guests > 0) {
     ggplot() +
-      geom_rect_pattern(
+      # geom_rect_pattern(
+      #   aes(
+      #     xmin = -1,
+      #     ymin = -1,
+      #     xmax = number_of_guests - 1,
+      #     ymax = 1
+      #   ),
+      #   pattern = 'image',
+      #   pattern_type = 'squish',
+      #   pattern_filename = wood_image,
+      #   color = "#786149",
+      #   size = 2
+      # ) +
+      geom_rect(
         aes(
           xmin = -1,
           ymin = -1,
           xmax = number_of_guests - 1,
           ymax = 1
         ),
-        pattern = 'image',
-        pattern_type = 'squish',
-        pattern_filename = wood_image,
+        fill = "#786149",
         color = "#786149",
         size = 2
       ) +
@@ -56,7 +66,7 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
         ),
         color = "white",
         family = font_family_guests,
-        size = 5,
+        size = 2.5,
         inherit.aes = FALSE
       ) +
       coord_polar(start = 0) +
@@ -74,19 +84,30 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
       )
   } else {
     ggplot() +
-      geom_rect_pattern(
-        aes(
-          xmin = -1,
-          ymin = -1,
-          xmax = 1,
-          ymax = 1
-        ),
-        pattern = 'image',
-        pattern_type = 'squish',
-        pattern_filename = wood_image,
-        color = "#786149",
-        size = 2
-      ) +
+      # geom_rect_pattern(
+      #   aes(
+      #     xmin = -1,
+      #     ymin = -1,
+      #     xmax = 1,
+      #     ymax = 1
+      #   ),
+      #   pattern = 'image',
+      #   pattern_type = 'squish',
+      #   pattern_filename = wood_image,
+      #   color = "#786149",
+    #   size = 2
+    # ) +
+    geom_rect(
+      aes(
+        xmin = -1,
+        ymin = -1,
+        xmax = 1,
+        ymax = 1
+      ),
+      fill = "#786149",
+      color = "#786149",
+      size = 2
+    ) +
       coord_polar(start = 0) +
       labs(title = paste("Table", id_table)) +
       theme(

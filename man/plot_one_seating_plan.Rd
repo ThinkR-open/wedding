@@ -2,7 +2,7 @@
 % Please edit documentation in R/plot_one_seating_plan.R
 \name{plot_one_seating_plan}
 \alias{plot_one_seating_plan}
-\title{Plot the seating plan for a givzn table}
+\title{Plot the seating plan for a given table}
 \usage{
 plot_one_seating_plan(
   .data,
@@ -24,7 +24,7 @@ plot_one_seating_plan(
 A ggplot2 object.
 }
 \description{
-Plot the seating plan for a givzn table
+Plot the seating plan for a given table
 }
 \examples{
 data(data_guests_table_example)
