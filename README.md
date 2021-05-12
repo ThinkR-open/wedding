@@ -13,7 +13,9 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 {wedding} helps you to prepare and manage your wedding 👰👰 - 👰🤵 - 🤵🤵
 
 > Your wedding may be postponed several times because of the covid, but
-> at least it will have its Shiny app. \#\# Demo
+> at least it will have its Shiny app. 
+
+## Demo
 
 An example of the app is available here:
 <http://connect.thinkr.fr/wedding/>
