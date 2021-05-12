@@ -3,7 +3,6 @@
 #' @param input,output,session Internal parameters for {shiny}. 
 #'     DO NOT REMOVE.
 #' @import shiny
-#' @importFrom shinymanager set_labels get_labels
 #' @importFrom readr read_csv cols col_character
 #' 
 #' @noRd
