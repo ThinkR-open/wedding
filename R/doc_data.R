@@ -23,3 +23,16 @@
 #' data("data_guests_example")
 #'
 "data_guests_example"
+
+#' Example for data_guests_table object
+#' @name data_guests_table_example
+#' @docType data
+#' @author Margot Brard \email{margot@@thinkr.fr}
+#' @description This data set is a small example.
+#' @format 15 rows, 3 columns. Columns are name, table, here_diner
+#' @usage
+#' data("data_guests_table_example")
+#' @examples
+#' data("data_guests_table_example")
+#'
+"data_guests_table_example"
