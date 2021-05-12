@@ -13,8 +13,8 @@
 #'
 #' @examples
 #' data(data_guests_table_example)
-#' #data_guests_table_example %>% 
-#'   #plot_one_seating_plan(id_table = 1)
+#' data_guests_table_example %>% 
+#'   plot_one_seating_plan(id_table = 1)
 plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", font_family_guests = "Times") {
   
 
@@ -31,7 +31,7 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
   
   if (number_of_guests > 0) {
     ggplot() +
-      # geom_rect_pattern(
+      # ggpattern::geom_rect_pattern(
       #   aes(
       #     xmin = -1,
       #     ymin = -1,
@@ -84,7 +84,7 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
       )
   } else {
     ggplot() +
-      # geom_rect_pattern(
+      # ggpattern::geom_rect_pattern(
       #   aes(
       #     xmin = -1,
       #     ymin = -1,

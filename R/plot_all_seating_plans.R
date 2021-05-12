@@ -13,8 +13,8 @@
 #'
 #' @examples
 #' data(data_guests_table_example)
-#' #data_guests_table_example %>% 
-#'  #plot_all_seating_plans()
+#' data_guests_table_example %>% 
+#'  plot_all_seating_plans()
 plot_all_seating_plans <- function(.data, font_family_table = "Times", font_family_guests = "Times") {
   
   list_plots_seating_plans <- .data %>% 

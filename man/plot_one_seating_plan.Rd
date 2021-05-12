@@ -28,6 +28,6 @@ Plot the seating plan for a given table
 }
 \examples{
 data(data_guests_table_example)
-#data_guests_table_example \%>\% 
-  #plot_one_seating_plan(id_table = 1)
+data_guests_table_example \%>\% 
+  plot_one_seating_plan(id_table = 1)
 }

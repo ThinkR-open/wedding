@@ -25,6 +25,6 @@ Plot all seating plans
 }
 \examples{
 data(data_guests_table_example)
-#data_guests_table_example \%>\% 
- #plot_all_seating_plans()
+data_guests_table_example \%>\% 
+ plot_all_seating_plans()
 }

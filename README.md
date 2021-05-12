@@ -24,14 +24,26 @@ Login to access the app: *welcome* <br /> Password to access the app:
 
 <img src="man/figures/home-page.png" width="100%" />
 
+## Meaning of the tabs
+
+  - *Accueil*: Home
+  - *Confirmer ma venue*: Confirm my presence
+  - *Programme de la journée*: Program of the day
+  - *Lieu du mariage*: Location of the wedding
+  - *Hébergements*: Accommodations
+  - *Témoins*: Witnesses
+  - *Covid*: Covid rules
+  - *Espace des mariés*: Groom’s area (expenses, guests, menu, seating
+    plan)
+
 ## Data
 
 The application is based on two datasets stored on Google Drive:
 
-  - *data\_guests*: contains information about your guests (name,
+  - **data\_guests**: contains information about your guests (name,
     attendance at the vin d’honneur, attendance at the dinner,
     attendance at the return on Sunday lunch, special diet, etc.)
-  - *data\_expenses*: contains information about the wedding expenses
+  - **data\_expenses**: contains information about the wedding expenses
     (venue, caterer, groom’s outfit, wedding rings,
 etc.)
 
