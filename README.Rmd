@@ -43,30 +43,43 @@ The application is based on two datasets stored on Google Drive:
 - _data_guests_: contains information about your guests (name, attendance at the vin d'honneur, attendance at the dinner, attendance at the return on Sunday lunch, special diet, etc.)
 - _data_expenses_: contains information about the wedding expenses (venue, caterer, groom's outfit, wedding rings, etc.)
 
-The datasets are updated according to the user's navigation in the app.
-
-## Install & launch the demo
-
-You can install the development version of {wedding} from GitHub:
-
-``` r
-# install.packages("remotes")
-remotes::install_github("ThinkR-open/wedding")
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics("man/figures/data-examples.png")
 ```
 
-To launch the demo version, you will need to create a token to access the sample data stored on Google Drive:
+Structure of the datasets can be explored with:
 
 ``` r
+# Install and load {wedding} package
+# install.packages("remotes")
+remotes::install_github("ThinkR-open/wedding")
+library(wedding)
+
+# View data_expenses
+data("data_expenses_example")
+data_expenses_example
+
+# View data_guests
+data("data_guests_example")
+data_guests_example
+```
+
+The datasets will be updated according to the user's navigation in the app.
+
+If you want to use others data, you will have to store these two kinds of datasets on your Google Drive account. Then, you will have to create and store a token to access the data stored on your account:
+
+``` r
+# Install {gargle} and {googledrive} packages
 # install.packages(c("gargle", "googledrive"))
-Sys.setenv(GOOGLE_MAIL = "wedding.r.package@gmail.com") # then restart R
+
+# Replace wedding.r.package@gmail.com by your gmail adress
+Sys.setenv(GOOGLE_MAIL = "wedding.r.package@gmail.com")
+
+# Then restart R and run
 options(gargle_oauth_cache = ".secrets")
 options(gargle_quiet = FALSE)
 googledrive::drive_auth(cache = ".secrets", 
                         email = Sys.getenv("GOOGLE_MAIL"))
-```
-
-Then run the app: 
-
-``` r
-wedding::run_app()
+# A popup will open, and you will be asked to write your password
+# This will create a token and will store it in the .secrets folder
 ```
