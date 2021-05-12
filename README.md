@@ -13,9 +13,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 {wedding} helps you to prepare and manage your wedding 👰👰 - 👰🤵 - 🤵🤵
 
 > Your wedding may be postponed several times because of the covid, but
-> at least it will have its Shiny app.
-
-## Demo
+> at least it will have its Shiny app. \#\# Demo
 
 An example of the app is available here:
 <http://connect.thinkr.fr/wedding/>
@@ -26,50 +24,67 @@ Login to access the app: *welcome* <br /> Password to access the app:
 
 <img src="man/figures/home-page.png" width="100%" />
 
-## Highlights 
+## Meaning of the tabs
 
-- Secure access via a login and password authentication system 
-- Information about the wedding day (schedule, accomodation, etc.)
-- RSVP feature where guests can specify their presence at the different times of the wedding, their choice for the diner menu and their diet
-- Dashboard _- only accessible with login and password -_ where bride/grooms can manage the preparations for their wedding (guests, expenses, table plan)
-- Data stored in Google sheets
-- Design in line with the wedding announcement (colors, fonts, etc.) 
+  - *Accueil*: Home
+  - *Confirmer ma venue*: Confirm my presence
+  - *Programme de la journée*: Program of the day
+  - *Lieu du mariage*: Location of the wedding
+  - *Hébergements*: Accommodations
+  - *Témoins*: Witnesses
+  - *Covid*: Covid rules
+  - *Espace des mariés*: Groom’s area (expenses, guests, menu, seating
+    plan)
 
 ## Data
 
 The application is based on two datasets stored on Google Drive:
 
-  - *data\_guests*: contains information about your guests (name,
+  - **data\_guests**: contains information about your guests (name,
     attendance at the vin d’honneur, attendance at the dinner,
     attendance at the return on Sunday lunch, special diet, etc.)
-  - *data\_expenses*: contains information about the wedding expenses
-    (venue, caterer, groom’s outfit, wedding rings, etc.)
+  - **data\_expenses**: contains information about the wedding expenses
+    (venue, caterer, groom’s outfit, wedding rings,
+etc.)
 
-The datasets are updated according to the user’s navigation in the app.
+<img src="man/figures/data-examples.png" width="70%" style="display: block; margin: auto;" />
 
-## Install & launch the demo
-
-You can install the development version of {wedding} from GitHub:
+Structure of the datasets can be explored with:
 
 ``` r
+# Install and load {wedding} package
 # install.packages("remotes")
 remotes::install_github("ThinkR-open/wedding")
+library(wedding)
+
+# View data_expenses
+data("data_expenses_example")
+data_expenses_example
+
+# View data_guests
+data("data_guests_example")
+data_guests_example
 ```
 
-To launch the demo version, you will need to create a token to access
-the sample data stored on Google Drive:
+The datasets will be updated according to the user’s navigation in the
+app.
+
+If you want to use others data, you will have to store these two kinds
+of datasets on your Google Drive account. Then, you will have to create
+and store a token to access the data stored on your account:
 
 ``` r
+# Install {gargle} and {googledrive} packages
 # install.packages(c("gargle", "googledrive"))
-Sys.setenv(GOOGLE_MAIL = "wedding.r.package@gmail.com") # then restart R
+
+# Replace wedding.r.package@gmail.com by your gmail adress
+Sys.setenv(GOOGLE_MAIL = "wedding.r.package@gmail.com")
+
+# Then restart R and run
 options(gargle_oauth_cache = ".secrets")
 options(gargle_quiet = FALSE)
 googledrive::drive_auth(cache = ".secrets", 
                         email = Sys.getenv("GOOGLE_MAIL"))
-```
-
-Then run the app:
-
-``` r
-wedding::run_app()
+# A popup will open, and you will be asked to write your password
+# This will create a token and will store it in the .secrets folder
 ```

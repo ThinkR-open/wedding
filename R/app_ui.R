@@ -64,6 +64,7 @@ app_ui <- function(request) {
 #' 
 #' @import shiny
 #' @importFrom golem add_resource_path activate_js favicon bundle_resources
+#' @importFrom shinymanager set_labels
 #' @noRd
 golem_add_external_resources <- function(){
   
