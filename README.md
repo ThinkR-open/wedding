@@ -13,7 +13,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 {wedding} helps you to prepare and manage your wedding 👰👰 - 👰🤵 - 🤵🤵
 
 > Your wedding may be postponed several times because of the covid, but
-> at least it will have its Shiny app. 
+> at least it will have its Shiny app.
 
 ## Demo
 
@@ -25,6 +25,8 @@ Login to access the app: *welcome* <br /> Password to access the app:
 *onlyforbride*
 
 <img src="man/figures/home-page.png" width="100%" />
+
+You will find below how to run this demo app from RStudio Cloud.
 
 ## Meaning of the tabs
 
@@ -40,16 +42,17 @@ Login to access the app: *welcome* <br /> Password to access the app:
 
 ## Data
 
-The application is based on two datasets stored on Google Drive:
+The application is based on two datasets stored on Google Drive. They
+will be **updated according to the user’s navigation in the
+app**.
+
+<img src="man/figures/data-examples.png" width="70%" style="display: block; margin: auto;" />
 
   - **data\_guests**: contains information about your guests (name,
     attendance at the vin d’honneur, attendance at the dinner,
-    attendance at the return on Sunday lunch, special diet, etc.)
+    attendance at the return on Sunday lunch, special diet, etc.).
   - **data\_expenses**: contains information about the wedding expenses
-    (venue, caterer, groom’s outfit, wedding rings,
-etc.)
-
-<img src="man/figures/data-examples.png" width="70%" style="display: block; margin: auto;" />
+    (venue, caterer, groom’s outfit, wedding rings, etc.)
 
 Structure of the datasets can be explored with:
 
@@ -68,25 +71,48 @@ data("data_guests_example")
 data_guests_example
 ```
 
-The datasets will be updated according to the user’s navigation in the
-app.
+Raw toy datasets can be accessed directly
+    here:
 
-If you want to use others data, you will have to store these two kinds
-of datasets on your Google Drive account. Then, you will have to create
-and store a token to access the data stored on your account:
+  - [**data\_guests**](https://docs.google.com/spreadsheets/d/1uCENmsM7XEcqE_ae80uYUMU6EA_-ozKqHyGJXHJHDiU/edit?usp=sharing)
+  - [**data\_expenses**](https://docs.google.com/spreadsheets/d/1Mb6QPB2G2Msy-K9xnU6Cs8qJ32i5eMdTvY9hh1mJwKw/edit?usp=sharing)
+
+## Run the demo app from RStudio Cloud
+
+  - Save the two toy datasets (see above) in your Google Drive storage
+  - Acess the project stored in RStudio Cloud:
+    <https://rstudio.cloud/project/2548492>
+  - Create environment variables mandatory for the
+app
+
+<!-- end list -->
 
 ``` r
-# Install {gargle} and {googledrive} packages
+Sys.setenv(GOOGLE_MAIL = "wedding.r.package@gmail.com") # Replace wedding.r.package@gmail.com by your gmail adress
+Sys.setenv(LOGIN_USER = "welcome")
+Sys.setenv(PWD_USER = "bigday")
+Sys.setenv(PWD_COUPLE = "onlyforbride")
+Sys.setenv(IMG_BACKGROUND = "wedding-background-demo-compressed.jpg")
+```
+
+  - Create and store the credentials for Google account - A popup will
+    open, and you will be asked to write your password - This will
+    create a token and will store it in a .secrets folder
+
+<!-- end list -->
+
+``` r
 # install.packages(c("gargle", "googledrive"))
-
-# Replace wedding.r.package@gmail.com by your gmail adress
-Sys.setenv(GOOGLE_MAIL = "wedding.r.package@gmail.com")
-
-# Then restart R and run
 options(gargle_oauth_cache = ".secrets")
 options(gargle_quiet = FALSE)
 googledrive::drive_auth(cache = ".secrets", 
                         email = Sys.getenv("GOOGLE_MAIL"))
-# A popup will open, and you will be asked to write your password
-# This will create a token and will store it in the .secrets folder
+```
+
+  - Run the demo app
+
+<!-- end list -->
+
+``` r
+wedding::run_app()
 ```
