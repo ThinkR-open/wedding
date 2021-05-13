@@ -28,6 +28,19 @@ Login to access the app: *welcome* <br /> Password to access the app:
 
 You will find below how to run this demo app from RStudio Cloud.
 
+## Highlights
+
+  - Secure access via a login and password authentication system
+  - Information about the wedding day (schedule, accomodation, etc.)
+  - RSVP feature where guests can specify their presence at the
+    different times of the wedding, their choice for the diner menu and
+    their diet
+  - Dashboard - only accessible with login and password - where
+    bride/grooms can manage the preparations for their wedding (guests,
+    expenses, table plan)
+  - Data stored in Google sheets
+  - Design in line with the wedding announcement (colors, fonts, etc.)
+
 ## Meaning of the tabs
 
   - *Accueil*: Home
@@ -37,8 +50,10 @@ You will find below how to run this demo app from RStudio Cloud.
   - *Hébergements*: Accommodations
   - *Témoins*: Witnesses
   - *Covid*: Covid rules
-  - *Espace des mariés*: Groom’s area (expenses, guests, menu, seating
-    plan)
+  - *Espace des mariés*: Groom’s area (expenses, guests, menu,
+    `{ggplot2}` seating plan)
+
+<img src="man/figures/seating-plan-page.png" width="100%" />
 
 ## Data
 

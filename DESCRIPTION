@@ -16,6 +16,7 @@ Imports:
     dplyr (>= 1.0.5),
     DT (>= 0.18),
     geosphere (>= 1.5.10),
+    ggpattern,
     ggplot2 (>= 3.3.3),
     glue (>= 1.4.2),
     golem (>= 0.3.0),
