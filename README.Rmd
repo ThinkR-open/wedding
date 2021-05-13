@@ -27,7 +27,7 @@ library(emo)
 
 ## Demo
 
-An example of the app is available here: http://connect.thinkr.fr/wedding/
+An example of the app is available here: http://connect.thinkr.fr/wedding
 
 Login to access the app: _welcome_ <br />
 Password to access the app: _bigday_ <br />
@@ -101,6 +101,12 @@ Raw toy datasets can be accessed directly here:
 - Save the two toy datasets (see above) in your Google Drive storage
 - Acess the project stored in RStudio Cloud: https://rstudio.cloud/project/2548794
 - In Git tab, check that you are in the *main* branch and pull the latest version of the branch
+- Install `{wedding}`
+
+``` r
+remotes::install_github("ThinkR-open/wedding")
+```
+
 - Create environment variables mandatory for the app
 
 ``` r

@@ -18,7 +18,7 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 ## Demo
 
 An example of the app is available here:
-<http://connect.thinkr.fr/wedding/>
+<http://connect.thinkr.fr/wedding>
 
 Login to access the app: *welcome* <br /> Password to access the app:
 *bigday* <br /> Password to access the tab dedicated to brides/grooms:
@@ -99,6 +99,14 @@ Raw toy datasets can be accessed directly
     <https://rstudio.cloud/project/2548794>
   - In Git tab, check that you are in the *main* branch and pull the
     latest version of the branch
+  - Install `{wedding}`
+
+<!-- end list -->
+
+``` r
+remotes::install_github("ThinkR-open/wedding")
+```
+
   - Create environment variables mandatory for the
 app
 
