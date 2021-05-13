@@ -96,7 +96,7 @@ Raw toy datasets can be accessed directly
 
   - Save the two toy datasets (see above) in your Google Drive storage
   - Acess the project stored in RStudio Cloud:
-    <https://rstudio.cloud/project/2548492>
+    <https://rstudio.cloud/project/2548794>
   - Create environment variables mandatory for the
 app
 
