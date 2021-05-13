@@ -100,6 +100,7 @@ Raw toy datasets can be accessed directly here:
 
 - Save the two toy datasets (see above) in your Google Drive storage
 - Acess the project stored in RStudio Cloud: https://rstudio.cloud/project/2548492
+- In Git tab, check that you are in the *main* branch and pull the latest version of the branch
 - Create environment variables mandatory for the app
 
 ``` r
