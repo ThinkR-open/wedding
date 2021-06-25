@@ -1,10 +1,11 @@
 #' Plot expenses by paymaster
 #'
-#' @param .data Tibble.
-#' @param prefix_money Character.
-#' @param suffix_money Character.
-#' @param big_mark_money Character.
-#' @param font_family Character.
+#' @param .data Tibble. Data.
+#' @param prefix_money Character. Money prefix.
+#' @param suffix_money Character. Money suffix.
+#' @param big_mark_money Character. Money big mark.
+#' @param main_font_family Character. Main font family.
+#' @param second_font_family Character. Second font family (x axis).
 #'
 #' @return Plot.
 #' @export
@@ -17,7 +18,9 @@
 #' data(data_expenses_example)
 #' data_expenses_example %>% 
 #'   plot_expenses_by_paymaster()
-plot_expenses_by_paymaster <- function(.data, prefix_money = "$", suffix_money = "", big_mark_money = ",", font_family = "Times") {
+plot_expenses_by_paymaster <- function(.data, prefix_money = "$", suffix_money = "", big_mark_money = ",", 
+                                       main_font_family = "Bauer Bodoni Std", 
+                                       second_font_family = "Old Script") {
   
   plot_expenses <- .data %>% 
     filter(paid_pending == "Paid") %>%
@@ -33,12 +36,12 @@ plot_expenses_by_paymaster <- function(.data, prefix_money = "$", suffix_money =
       x = "",
       y = ""
     ) +
-    geom_text(aes(label = label), vjust = -0.5, family = font_family, size = 6) +
+    geom_text(aes(label = label), vjust = -0.5, family = main_font_family, size = 4) +
     scale_y_continuous(labels = dollar_format(suffix = suffix_money, prefix = prefix_money, big.mark = big_mark_money)) +
     theme_minimal() +
-    theme(title = element_text(family = font_family),
-          text = element_text(family = font_family),
-          axis.text.x = element_text(family = font_family, size = 20))
+    theme(title = element_text(family = main_font_family),
+          text = element_text(family = main_font_family),
+          axis.text.x = element_text(family = second_font_family, size = 24))
 
   return(plot_expenses)
   

@@ -7,18 +7,18 @@
 plot_one_seating_plan(
   .data,
   id_table,
-  font_family_table = "Times",
-  font_family_guests = "Times"
+  font_family_table = "Old Script",
+  font_family_guests = "Bauer Bodoni Std"
 )
 }
 \arguments{
-\item{.data}{Tibble.}
+\item{.data}{Tibble. Data.}
 
-\item{id_table}{Integer.}
+\item{id_table}{Integer. Id of the table.}
 
-\item{font_family_table}{Character.}
+\item{font_family_table}{Character. Font family for the title (number table).}
 
-\item{font_family_guests}{Character.}
+\item{font_family_guests}{Character. Font family for the guests names.}
 }
 \value{
 A ggplot2 object.

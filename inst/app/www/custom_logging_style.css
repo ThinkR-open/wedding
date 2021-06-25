@@ -1,13 +1,12 @@
 /* Import fonts */
-
 @font-face {
     font-family: 'MrsEavesItalic';
-    src: url('MrsEavesItalic.eot');
-    src: url('MrsEavesItalic.eot?#iefix') format('embedded-opentype'),
-        url('MrsEavesItalic.woff2') format('woff2'),
-        url('MrsEavesItalic.woff') format('woff'),
-        url('MrsEavesItalic.ttf') format('truetype'),
-        url('MrsEavesItalic.svg#MrsEavesItalic') format('svg');
+    src: url('fonts/MrsEavesItalic.eot');
+    src: url('fonts/MrsEavesItalic.eot?#iefix') format('embedded-opentype'),
+        url('fonts/MrsEavesItalic.woff2') format('woff2'),
+        url('fonts/MrsEavesItalic.woff') format('woff'),
+        url('fonts/MrsEavesItalic.ttf') format('truetype'),
+        url('fonts/MrsEavesItalic.svg#MrsEavesItalic') format('svg');
     font-weight: 100;
     font-style: italic;
     font-display: swap;
@@ -15,12 +14,12 @@
 
 @font-face {
     font-family: 'Old Script';
-    src: url('OldScrip.eot');
-    src: url('OldScrip.eot?#iefix') format('embedded-opentype'),
-        url('OldScrip.woff2') format('woff2'),
-        url('OldScrip.woff') format('woff'),
-        url('OldScrip.ttf') format('truetype'),
-        url('OldScrip.svg#OldScrip') format('svg');
+    src: url('fonts/OldScript.eot');
+    src: url('fonts/OldScript.eot?#iefix') format('embedded-opentype'),
+        url('fonts/OldScript.woff2') format('woff2'),
+        url('fonts/OldScript.woff') format('woff'),
+        url('fonts/OldScript.ttf') format('truetype'),
+        url('fonts/OldScript.svg#OldScrip') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -28,12 +27,12 @@
 
 @font-face {
     font-family: 'Bauer Bodoni Std 1';
-    src: url('BauerBodoniStd-Roman.eot');
-    src: url('BauerBodoniStd-Roman.eot?#iefix') format('embedded-opentype'),
-        url('BauerBodoniStd-Roman.woff2') format('woff2'),
-        url('BauerBodoniStd-Roman.woff') format('woff'),
-        url('BauerBodoniStd-Roman.ttf') format('truetype'),
-        url('BauerBodoniStd-Roman.svg#BauerBodoniStd-Roman') format('svg');
+    src: url('fonts/BauerBodoniStd.eot');
+    src: url('fonts/BauerBodoniStd.eot?#iefix') format('embedded-opentype'),
+        url('fonts/BauerBodoniStd.woff2') format('woff2'),
+        url('fonts/BauerBodoniStd.woff') format('woff'),
+        url('fonts/BBauerBodoniStd.ttf') format('truetype'),
+        url('fonts/BauerBodoniStd.svg#BauerBodoniStd') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

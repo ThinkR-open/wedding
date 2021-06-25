@@ -9,19 +9,22 @@ plot_expenses_by_paymaster(
   prefix_money = "$",
   suffix_money = "",
   big_mark_money = ",",
-  font_family = "Times"
+  main_font_family = "Bauer Bodoni Std",
+  second_font_family = "Old Script"
 )
 }
 \arguments{
-\item{.data}{Tibble.}
+\item{.data}{Tibble. Data.}
 
-\item{prefix_money}{Character.}
+\item{prefix_money}{Character. Money prefix.}
 
-\item{suffix_money}{Character.}
+\item{suffix_money}{Character. Money suffix.}
 
-\item{big_mark_money}{Character.}
+\item{big_mark_money}{Character. Money big mark.}
 
-\item{font_family}{Character.}
+\item{main_font_family}{Character. Main font family.}
+
+\item{second_font_family}{Character. Second font family (x axis).}
 }
 \value{
 Plot.

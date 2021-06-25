@@ -1,9 +1,9 @@
 #' Plot the seating plan for a given table
 #'
-#' @param .data Tibble.
-#' @param id_table Integer.
-#' @param font_family_table Character.
-#' @param font_family_guests Character.
+#' @param .data Tibble. Data.
+#' @param id_table Integer. Id of the table.
+#' @param font_family_table Character. Font family for the title (number table).
+#' @param font_family_guests Character. Font family for the guests names.
 #' 
 #' @importFrom dplyr filter mutate row_number
 #' @importFrom ggplot2 ggplot geom_text aes coord_polar labs theme element_blank element_text geom_rect
@@ -15,7 +15,7 @@
 #' data(data_guests_table_example)
 #' data_guests_table_example %>% 
 #'   plot_one_seating_plan(id_table = 1)
-plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", font_family_guests = "Times") {
+plot_one_seating_plan <- function(.data, id_table, font_family_table = "Old Script", font_family_guests = "Bauer Bodoni Std") {
   
 
   data_guests_one_table <- .data %>% 
@@ -31,30 +31,30 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
   
   if (number_of_guests > 0) {
     ggplot() +
-      # ggpattern::geom_rect_pattern(
-      #   aes(
-      #     xmin = -1,
-      #     ymin = -1,
-      #     xmax = number_of_guests - 1,
-      #     ymax = 1
-      #   ),
-      #   pattern = 'image',
-      #   pattern_type = 'squish',
-      #   pattern_filename = wood_image,
-      #   color = "#786149",
-      #   size = 2
-      # ) +
-      geom_rect(
+      ggpattern::geom_rect_pattern(
         aes(
           xmin = -1,
           ymin = -1,
           xmax = number_of_guests - 1,
           ymax = 1
         ),
-        fill = "#786149",
+        pattern = 'image',
+        pattern_type = 'squish',
+        pattern_filename = wood_image,
         color = "#786149",
         size = 2
       ) +
+      # geom_rect(
+      #   aes(
+      #     xmin = -1,
+      #     ymin = -1,
+      #     xmax = number_of_guests - 1,
+      #     ymax = 1
+      #   ),
+      #   fill = "#786149",
+      #   color = "#786149",
+      #   size = 2
+      # ) +
       geom_text(
         data = data_guests_one_table,
         aes(
@@ -66,7 +66,7 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
         ),
         color = "white",
         family = font_family_guests,
-        size = 2.5,
+        size = 5,
         inherit.aes = FALSE
       ) +
       coord_polar(start = 0) +
@@ -84,30 +84,30 @@ plot_one_seating_plan <- function(.data, id_table, font_family_table = "Times", 
       )
   } else {
     ggplot() +
-      # ggpattern::geom_rect_pattern(
-      #   aes(
-      #     xmin = -1,
-      #     ymin = -1,
-      #     xmax = 1,
-      #     ymax = 1
-      #   ),
-      #   pattern = 'image',
-      #   pattern_type = 'squish',
-      #   pattern_filename = wood_image,
-      #   color = "#786149",
-    #   size = 2
-    # ) +
-    geom_rect(
+    ggpattern::geom_rect_pattern(
       aes(
         xmin = -1,
         ymin = -1,
         xmax = 1,
         ymax = 1
       ),
-      fill = "#786149",
+      pattern = 'image',
+      pattern_type = 'squish',
+      pattern_filename = wood_image,
       color = "#786149",
       size = 2
     ) +
+    # geom_rect(
+    #   aes(
+    #     xmin = -1,
+    #     ymin = -1,
+    #     xmax = 1,
+    #     ymax = 1
+    #   ),
+    #   fill = "#786149",
+    #   color = "#786149",
+    #   size = 2
+    # ) +
       coord_polar(start = 0) +
       labs(title = paste("Table", id_table)) +
       theme(

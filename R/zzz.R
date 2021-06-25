@@ -6,3 +6,12 @@ globalVariables(c("description", "destinataire", "label", "montant", "paye_en_at
                   "announcement", "name", "type",
                   "here_cocktail", "here_diner", "here_sunday", "menu_diner", "special_diet",
                   "time_confirmation", "row_number", "angle", "id_guest"))
+
+# Lancement de load_wedding_fonts() au chargement du package
+#' @noRd
+#'
+.onLoad <- function(libname, pkgname) {
+  
+  load_wedding_fonts()
+  
+}
