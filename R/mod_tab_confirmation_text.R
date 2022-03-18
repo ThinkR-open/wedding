@@ -10,12 +10,12 @@
 #'
 #' @importFrom shiny NS tagList 
 #' @importFrom shinyjs useShinyjs
-mod_tab_confirmation_ui <- function(id){
+mod_tab_confirmation_text_ui <- function(id){
   
   ns <- NS(id)
   
   tagList(
- 
+    
     useShinyjs(),
     
     fluidRow(
@@ -32,17 +32,22 @@ mod_tab_confirmation_ui <- function(id){
         
         width = 5,
         
-        selectInput(
+        textInput(
           inputId = ns("name"),
-          label = "Pr\u00e9nom",
-          choices = c("Choisir dans la liste la personne", letters),
-          selected = "Choisir dans la liste la personne"
+          label = "Pr\u00e9nom", 
+          value = ""
         ),
-
+        
+        selectInput(
+          inputId = ns("type_guest"),
+          label = "Cat\u00e9gorie",
+          choices = c("Adulte", "Ado", "Enfant")
+        ),
+        
         tags$br(style = "line-height: 20px"),
         
         tags$p("Pr\u00e9sence aux diff\u00e9rents moments du mariage", style = "font-size:15px; letter-spacing:3px; font-weight: bold; color: black"),
-         
+        
         fluidRow(
           column(
             width = 4,
@@ -82,7 +87,7 @@ mod_tab_confirmation_ui <- function(id){
         ),
         
         uiOutput(ns("show_input_teens_menu")),
-      
+        
         uiOutput(ns("show_input_kids_menu")),
         
         tags$br(style = "line-height: 20px"),
@@ -130,11 +135,11 @@ mod_tab_confirmation_ui <- function(id){
         
       )
       
-  )
+    )
   )
   
 }
-    
+
 #' tab_confirmation Server Functions
 #' 
 #' @importFrom shinyjs reset hide
@@ -143,7 +148,7 @@ mod_tab_confirmation_ui <- function(id){
 #' @importFrom purrr map_dfr
 #'
 #' @noRd 
-mod_tab_confirmation_server <- function(id, r_global){
+mod_tab_confirmation_text_server <- function(id, r_global){
   
   moduleServer( id, function(input, output, session){
     
@@ -153,6 +158,7 @@ mod_tab_confirmation_server <- function(id, r_global){
     r_local <- reactiveValues()
     
     r_local$info <- tibble(name = character(),
+                           type = character(),
                            here_cocktail = character(),
                            here_diner = character(), 
                            here_sunday = character(),
@@ -160,32 +166,13 @@ mod_tab_confirmation_server <- function(id, r_global){
                            menu_diner = character(),
                            time_confirmation = as.character())
     
-    # Update input list guest according to data
-    observeEvent(TRUE, once = TRUE, {
-
-      updateSelectInput(
-        session = session,
-        inputId = "name",
-        choices = c("Choisir dans la liste la personne", r_global$data_guests %>% distinct(name) %>% pull()),
-        selected = "Choisir dans la liste la personne"
-        )
-
-    })
-    
-    # Find info about guest in data and update selectinput menu according to guest type adult/teen/kid
-    observeEvent(input$name, ignoreInit = TRUE, {
-
-      req(input$name != "Choisir dans la liste la personne")
-      req(r_global$data_guests)
-
-      r_local$type_guest <- r_global$data_guests %>%
-        filter(name == input$name) %>%
-        pull(type)
-
-      if (r_local$type_guest == "Ado") {
-
+    # Find info about guest and update selectinput menu according to guest type adult/teen/kid
+    observeEvent(input$type_guest, ignoreInit = TRUE, {
+      
+      if (input$type_guest == "Ado") {
+        
         output$show_input_teens_menu <- renderUI({
-
+          
           selectInput(
             inputId = ns("teens_menu"),
             label = "Menu pour le d\u00eener - le menu adulte contient du foie gras et du canard",
@@ -196,18 +183,18 @@ mod_tab_confirmation_server <- function(id, r_global){
         })
         
         shinyjs::hide(id = "kids_menu")
-
-      } else if (r_local$type_guest == "Enfant") {
-
+        
+      } else if (input$type_guest == "Enfant") {
+        
         output$show_input_kids_menu <- renderUI({
-
+          
           selectInput(
             inputId = ns("kids_menu"),
             label = "Choix pour les repas (cocktail, d\u00eener, retour)",
             choices = c("Menu enfant", "Pas de repas \u00e0 pr\u00e9voir pour mon bibou"),
             selected = "Menu enfant"
           )
-
+          
         })
         
         shinyjs::hide(id = "teens_menu")
@@ -225,6 +212,7 @@ mod_tab_confirmation_server <- function(id, r_global){
     observeEvent(input$save_info_guest, {
       
       r_local$name <- input$name
+      r_local$type_guest <- input$type_guest
       r_local$here_cocktail <- input$here_cocktail
       r_local$here_diner <- input$here_diner
       r_local$here_sunday <- input$here_sunday
@@ -249,9 +237,10 @@ mod_tab_confirmation_server <- function(id, r_global){
         r_local$menu_diner <- NA_character_
         
       }
-
+      
       r_local$info <- r_local$info %>% 
         add_row(name = r_local$name,
+                type = r_local$type_guest,
                 here_cocktail = r_local$here_cocktail,
                 here_diner = r_local$here_diner, 
                 here_sunday = r_local$here_sunday,
@@ -260,6 +249,7 @@ mod_tab_confirmation_server <- function(id, r_global){
                 time_confirmation = as.character(Sys.time()))
       
       reset("name")
+      reset("type_guest")
       reset("here_cocktail")
       reset("here_diner")
       reset("here_sunday")
@@ -282,8 +272,8 @@ mod_tab_confirmation_server <- function(id, r_global){
       r_local$info %>% 
         select(-time_confirmation) %>% 
         rename(
-          stats::setNames(c("name", "here_cocktail", "here_diner", "here_sunday", "special_diet", "menu_diner"), 
-                          c("Nom", "Pr\u00e9sence vin d\'honneur", "Pr\u00e9sence d\u00eener", "Pr\u00e9sence retour", "R\u00e9gime particulier", "Menu pour le d\u00eener") 
+          stats::setNames(c("name", "type_guest", "here_cocktail", "here_diner", "here_sunday", "special_diet", "menu_diner"), 
+                          c("Nom", "Cat\u00e9gorie", "Pr\u00e9sence vin d\'honneur", "Pr\u00e9sence d\u00eener", "Pr\u00e9sence retour", "R\u00e9gime particulier", "Menu pour le d\u00eener") 
           )
         )
       
@@ -308,7 +298,6 @@ mod_tab_confirmation_server <- function(id, r_global){
       }
       
       # Verify if there are doubles - if yes, delete them
-      
       if (any(duplicated(vec_guests_to_send))) {
         
         showNotification(ui = "Vous avez renseign\u00e9 des doublons d\'informations pour la m\u00eame personne. Seules les derni\u00e8res seront conserv\u00e9es.",
@@ -331,15 +320,19 @@ mod_tab_confirmation_server <- function(id, r_global){
       # Upload the new database
       temp_dir <- tempdir()
       readr::write_csv(r_global$data_guests, glue::glue(temp_dir, "/new_data_guests.csv"))
-      googledrive::drive_update("data_guests", glue::glue(temp_dir, "/new_data_guests.csv"))
+      if (Sys.getenv("USE_PREFILLED_DATA_GUEST") == "no") {
+        googledrive::drive_update("data_guests_not_pre_filled", glue::glue(temp_dir, "/new_data_guests.csv"))
+      } else {
+        googledrive::drive_update("data_guests", glue::glue(temp_dir, "/new_data_guests.csv"))
+      }
       
     })
     
   })
 }
-    
+
 ## To be copied in the UI
-# mod_tab_confirmation_ui("tab_confirmation_ui_1")
-    
+# mod_tab_confirmation_text_ui("tab_confirmation_ui_1")
+
 ## To be copied in the server
-# mod_tab_confirmation_server("tab_confirmation_ui_1")
+# mod_tab_confirmation_text_server("tab_confirmation_ui_1")

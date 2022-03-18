@@ -20,7 +20,11 @@ app_ui <- function(request) {
                
                tabPanel(
                  title = "Confirmer ma venue", 
-                 mod_tab_confirmation_ui("tab_confirmation_ui_1")
+                 if (Sys.getenv("USE_PREFILLED_DATA_GUEST") == "no") {
+                   mod_tab_confirmation_text_ui("tab_confirmation_ui_1") # if you want to let your guests writte their name
+                 } else {
+                   mod_tab_confirmation_ui("tab_confirmation_ui_1") # if you want to use a pre-filled google sheets with the names of your guests
+                 }
                ),
                
                tabPanel(

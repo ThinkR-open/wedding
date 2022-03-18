@@ -9,5 +9,6 @@ golem::detach_all_attached()
 golem::document_and_reload()
 attachment::att_amend_desc()
 
-# Run the applicationx
+# Run the application
+pkgload::load_all()
 run_app()
