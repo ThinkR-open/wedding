@@ -29,16 +29,27 @@ add_info_guests_in_database <- function(info_to_add, data_guests) {
     distinct(name) %>% 
     pull(name)
   
-  data_guests_to_add  <- data_guests %>% 
-    filter(name %in% names_guests_to_add) %>% 
-    select(name, type, table, announcement) %>% 
-    left_join(info_to_add,
-              by = "name")
-  
-  new_data_guests <- data_guests %>% 
-    filter(!(name %in% names_guests_to_add)) %>% 
-    bind_rows(data_guests_to_add) %>% 
-    arrange(table)
+  if (Sys.getenv("USE_PREFILLED_DATA_GUEST") == "no") {
+    
+    data_guests_to_add <- info_to_add
+      
+    new_data_guests <- data_guests %>% 
+      bind_rows(data_guests_to_add) %>% 
+      arrange(table)
+    
+  } else {
+    
+    data_guests_to_add  <- data_guests %>% 
+      filter(name %in% names_guests_to_add) %>% 
+      select(name, type, table, announcement) %>% 
+      left_join(info_to_add,
+                by = "name")
+    
+    new_data_guests <- data_guests %>% 
+      filter(!(name %in% names_guests_to_add)) %>% 
+      bind_rows(data_guests_to_add) %>% 
+      arrange(table)
+  }
   
   return(new_data_guests)
   

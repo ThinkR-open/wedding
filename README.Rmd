@@ -23,8 +23,6 @@ library(emo)
 
 {wedding} helps you to prepare and manage your wedding `r emo::ji("bride_with_veil")``r emo::ji("bride_with_veil")` - `r emo::ji("bride_with_veil")``r emo::ji("man_in_tuxedo")` - `r emo::ji("man_in_tuxedo")``r emo::ji("man_in_tuxedo")`
 
-> Your wedding may be postponed several times because of the covid, but at least it will have its Shiny app.
-
 ## Demo
 
 An example of the app is available here: http://connect.thinkr.fr/wedding
@@ -43,7 +41,7 @@ You will find below how to run this demo app from RStudio Cloud.
 
 - Secure access via a login and password authentication system
 - Information about the wedding day (schedule, accomodation, etc.)
-- RSVP feature where guests can specify their presence at the different times of the wedding, their choice for the diner menu and their diet
+- RSVP feature where guests can specify their presence at the different times of the wedding, their choice for the diner menu and their diet - 2 types of RSVP features are proposed here (see additional details in the RSVP feature section of this README)
 - Dashboard - only accessible with login and password - where bride/grooms can manage the preparations for their wedding (guests, expenses, table plan)
 - Data stored in Google sheets
 - Design in line with the wedding announcement (colors, fonts, etc.)
@@ -95,6 +93,33 @@ Raw toy datasets can be accessed directly here:
 
 - [**data_guests**](https://docs.google.com/spreadsheets/d/1uCENmsM7XEcqE_ae80uYUMU6EA_-ozKqHyGJXHJHDiU/edit?usp=sharing)
 - [**data_expenses**](https://docs.google.com/spreadsheets/d/1Mb6QPB2G2Msy-K9xnU6Cs8qJ32i5eMdTvY9hh1mJwKw/edit?usp=sharing)
+
+## RSVP feature
+
+2 types of features are proposed here :
+
+- You can create your guest list beforehand. Your spreadsheet is pre-filled. The guests will be asked to select their first name from a **drop-down list**. *This is the default feature for the app.*
+
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics("man/figures/rsvp_list.png")
+```
+
+- Or you do not create your guest list beforehand. At the beginning, your spreadsheet is empty. In this case, the guests will be asked to indicate their first name in a **free text zone**. You will need to go to the spreadsheet regularly to associate guests to a table in your seating plan. 
+
+```{r echo=FALSE, out.width='70%', fig.align='center'}
+knitr::include_graphics("man/figures/rsvp_text.png")
+```
+
+<br/>
+
+#### To use the non pre-filled list and the free text zone:
+
+- Define an extra environment variable: 
+``` r
+Sys.setenv(USE_PREFILLED_DATA_GUEST = "no")
+```
+
+- Call your spreadsheet in Google Drive **data_guests_not_pre_filled**, not *data_guests* (default). A raw toy dataset can be accessed directly here: [**data_guests_not_pre_filled**](https://docs.google.com/spreadsheets/d/1qJo_UiHx0qjjqEncT2NCYAoFMycozKxrShGcun7Qokw/edit?usp=sharing)
 
 ## Run the demo app from RStudio Cloud
 
