@@ -272,7 +272,7 @@ mod_tab_confirmation_text_server <- function(id, r_global){
       r_local$info %>% 
         select(-time_confirmation) %>% 
         rename(
-          stats::setNames(c("name", "type_guest", "here_cocktail", "here_diner", "here_sunday", "special_diet", "menu_diner"), 
+          stats::setNames(c("name", "type", "here_cocktail", "here_diner", "here_sunday", "special_diet", "menu_diner"), 
                           c("Nom", "Cat\u00e9gorie", "Pr\u00e9sence vin d\'honneur", "Pr\u00e9sence d\u00eener", "Pr\u00e9sence retour", "R\u00e9gime particulier", "Menu pour le d\u00eener") 
           )
         )
