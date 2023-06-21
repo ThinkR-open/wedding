@@ -18,7 +18,6 @@ library(emo)
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ThinkR-open/wedding/workflows/R-CMD-check/badge.svg)](https://github.com/ThinkR-open/wedding/actions)
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 {wedding} helps you to prepare and manage your wedding `r emo::ji("bride_with_veil")``r emo::ji("bride_with_veil")` - `r emo::ji("bride_with_veil")``r emo::ji("man_in_tuxedo")` - `r emo::ji("man_in_tuxedo")``r emo::ji("man_in_tuxedo")`
@@ -147,7 +146,7 @@ Sys.setenv(IMG_BACKGROUND = "wedding-background-demo-compressed.jpg")
 ``` r
 # install.packages(c("gargle", "googledrive"))
 options(gargle_oauth_cache = ".secrets")
-options(gargle_quiet = FALSE)
+options(gargle_verbosity = "debug")
 googledrive::drive_auth(cache = ".secrets", 
                         email = Sys.getenv("GOOGLE_MAIL"))
 ```

@@ -19,20 +19,27 @@ attachment::att_amend_desc()
 devtools::check()
 
 # Deploy
-
-account_name <- Sys.getenv("NAME_ACCOUNT_RSTUDIO_CONNECT")
-account_server <- Sys.getenv("NAME_SERVER_RSTUDIO_CONNECT")
-api_connect_key <- Sys.getenv("API_CONNECT_KEY")
-
-rsconnect::connectApiUser(
-  account = account_name,
-  server = account_server,
-  apiKey = api_connect_key
+rsconnect::addServer(
+  httr::modify_url(Sys.getenv("CONNECT_URL"), path = "__api__"),
+  name = Sys.getenv("CONNECT_NAME")
 )
 
+rsconnect::connectApiUser(
+  account = Sys.getenv("CONNECT_USER"),
+  server = Sys.getenv("CONNECT_NAME"),
+  apiKey = Sys.getenv("CONNECT_TOKEN")
+)
+
+appFiles <- list.files(getwd(), recursive = TRUE)
+appFiles <- appFiles[!grepl(".Renviron|.Rprofile|renv|rstudio_|deliverables|dev|data-raw|docker", appFiles)]
+
 rsconnect::deployApp(
+  appDir = getwd(),
   appName = Sys.getenv("APP_NAME"),
-  appTitle = Sys.getenv("APP_TITLE"),
-  account = account_name,                    # your Connect username
-  server = account_server                    # the Connect server, see rsconnect::accounts()
+  appFiles = appFiles,
+  appPrimaryDoc = "app.R",
+  account = Sys.getenv("CONNECT_USER"),
+  server = Sys.getenv("CONNECT_NAME"),
+  forceUpdate = TRUE,
+  lint = FALSE
 )
