@@ -15,14 +15,17 @@
 
 ## Run checks ----
 ## Check the package before sending to prod
-attachment::att_amend_desc()
+attachment::att_amend_desc(
+  extra.suggests = "sf", 
+  use.config = FALSE
+)
 devtools::check()
 
 # Deploy
 
-account_name <- Sys.getenv("NAME_ACCOUNT_RSTUDIO_CONNECT")
-account_server <- Sys.getenv("NAME_SERVER_RSTUDIO_CONNECT")
-api_connect_key <- Sys.getenv("API_CONNECT_KEY")
+account_name <- Sys.getenv("CONNECT_USER")
+account_server <- Sys.getenv("CONNECT_NAME")
+api_connect_key <- Sys.getenv("CONNECT_TOKEN")
 
 rsconnect::connectApiUser(
   account = account_name,
@@ -31,8 +34,8 @@ rsconnect::connectApiUser(
 )
 
 rsconnect::deployApp(
-  appName = Sys.getenv("APP_NAME"),
-  appTitle = Sys.getenv("APP_TITLE"),
+  appName = "wedding",
+  appTitle = "wedding",
   account = account_name,                    # your Connect username
   server = account_server                    # the Connect server, see rsconnect::accounts()
 )

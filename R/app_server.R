@@ -29,8 +29,16 @@ app_server <- function( input, output, session ) {
   r_global <- reactiveValues()
     
   # Data on google drive
-  googledrive::drive_auth(cache = ".secrets", 
-                          email = Sys.getenv("GOOGLE_MAIL"))
+  options(gargle_oauth_cache = ".secrets")
+  options(gargle_oauth_email = Sys.getenv("GOOGLE_MAIL"))
+  
+  print(paste("cache dir:", gargle::gargle_oauth_cache()))
+  print(paste("cache email:", gargle::gargle_oauth_email()))
+  
+  gargle::gargle_oauth_sitrep()
+  
+  googledrive::drive_deauth()
+  googledrive::drive_auth()
   
   temp_dir <- tempdir()
   

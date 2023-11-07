@@ -23,7 +23,7 @@ mod_hidden_tab_preparations_ui <- function(id){
         align = "center",
         passwordInput(
           inputId = ns("password_tab_preparation"), 
-          "Mot de passe :"
+          label = "Mot de passe : (onlyforbride)"
         )
       )
     ),

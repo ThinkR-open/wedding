@@ -79,8 +79,8 @@ golem_add_external_resources <- function(){
   set_labels(
     language = "en",
     "Please authenticate" = "Site du mariage de Margot & David",
-    "Username:" = "Identifiant (indiqu\u00e9 sur le faire-part) :",
-    "Password:" = "Mot de passe (indiqu\u00e9 sur le faire-part) :",
+    "Username:" = "Identifiant (indiqu\u00e9 sur le faire-part : welcome) :",
+    "Password:" = "Mot de passe (indiqu\u00e9 sur le faire-part : bigday) :",
     "Login" = "Connexion",
     "Username or password are incorrect" = "L\'identifiant ou le mot de passe est incorrect"
   )

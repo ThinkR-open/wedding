@@ -147,7 +147,7 @@ Sys.setenv(IMG_BACKGROUND = "wedding-background-demo-compressed.jpg")
 ``` r
 # install.packages(c("gargle", "googledrive"))
 options(gargle_oauth_cache = ".secrets")
-options(gargle_quiet = FALSE)
+options(gargle_verbosity = "debug")
 googledrive::drive_auth(cache = ".secrets", 
                         email = Sys.getenv("GOOGLE_MAIL"))
 ```
