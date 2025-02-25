@@ -33,7 +33,7 @@ plot_expenses_by_paymaster <- function(.data, prefix_money = "$", suffix_money =
       x = "",
       y = ""
     ) +
-    geom_text(aes(label = label), vjust = -0.5, family = font_family, size = 6) +
+    geom_text(aes(label = label), vjust = -0.5, family = font_family, size = 4) +
     scale_y_continuous(labels = dollar_format(suffix = suffix_money, prefix = prefix_money, big.mark = big_mark_money)) +
     theme_minimal() +
     theme(title = element_text(family = font_family),
