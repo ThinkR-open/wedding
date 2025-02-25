@@ -35,7 +35,7 @@ mod_tab_confirmation_ui <- function(id){
         selectInput(
           inputId = ns("name"),
           label = "Pr\u00e9nom",
-          choices = c("Choisir dans la liste la personne", letters),
+          choices = "Choisir dans la liste la personne",
           selected = "Choisir dans la liste la personne"
         ),
 
